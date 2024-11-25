@@ -3,14 +3,40 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --background: #ffffff;
+  --foreground: #171717; */
+
+  /* Base Colors */
+  --color-primary-dark: #021c1e;
+  --color-primary-mid: #004445;
+  --color-primary-light: #2c7873;
+  --color-secondary-light: #6fb98f;
+
+  /* Lighter Shades */
+  --color-primary-lightest: #4d8b84; /* Lightest version of primary-light */
+  --color-primary-lighter: #6db3a1; /* Lighter version of primary-light */
+  --color-secondary-lightest: #8fd1a4; /* Lightest version of secondary-light */
+
+  /* Darker Shades */
+  --color-primary-darker: #011c1a; /* Darker version of primary-dark */
+  --color-primary-darkest: #000f0f; /* Darkest version of primary-dark */
+  --color-primary-mid-dark: #003c3a; /* Darker version of primary-mid */
+
+  /* Accent Colors */
+  --color-accent-1: #c0e0c6; /* Soft minty accent */
+  --color-accent-2: #ffb84d; /* Warm gold for highlights */
+  --color-accent-3: #ff6a3d; /* Rich coral for interactive elements */
+  --color-accent-4: #ffddc1; /* Soft peach accent for buttons/alerts */
+
+  /* Neutral Colors */
+  --color-neutral-light: #e1e1e1; /* Light neutral background or text */
+  --color-neutral-dark: #333333; /* Dark neutral for text or borders */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* --background: #0a0a0a;
+    --foreground: #ededed; */
   }
 }
 
@@ -18,4 +44,61 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Usage example */
+body {
+  background-color: var(--color-primary-dark);
+  color: var(--color-neutral-light);
+}
+
+header {
+  background-color: var(--color-primary-light);
+}
+
+button {
+  background-color: var(--color-primary-mid);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-primary-darker);
+  }
+}
+
+button.secondary {
+  background-color: var(--color-accent-2);
+  color: white;
+  border: none;
+}
+
+button.secondary:hover {
+  background-color: var(--color-accent-1);
+}
+
+footer {
+  background-color: var(--color-primary-mid-dark);
+  color: var(--color-neutral-light);
+}
+
+.card {
+  background-color: var(--color-primary-lightest);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: var(--color-accent-3);
+  color: white;
+}
+
+.card-body {
+  color: var(--color-neutral-dark);
+}
+
+.alert {
+  background-color: var(--color-accent-4);
+  padding: 15px;
+  border-radius: 5px;
 }
